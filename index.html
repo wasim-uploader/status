@@ -44,8 +44,11 @@ function refreshtwo(callback) {
 
 function updateTotal() {
   total_enc = enc_one + enc_two;
+  left_num = 54982 - total_enc
   const message = "Total parsed and encoded: " + total_enc.toString();
+  const message = "Left to encode: " + left_num.toString() + " movies";
   document.getElementById("status_encode_all").innerHTML = message;
+  document.getElementById("status_left_to_encode").innerHTML = message;
 }
 
 function refreshall() {
@@ -61,7 +64,10 @@ refreshall()
 
 <p id="status_encode_1"></p>
 <p id="status_encode_2"></p>
-<p id="status_encode_all"></p>
+<p id="status_encode_all"></p> 
+<p id="status_left_to_encode"></p>
+<noscript>Turn on javascript you bricker</noscript>
 
+  
 </body>
 </html>
