@@ -62,7 +62,7 @@ function refreshall() {
   document.getElementById("waiting").innerHTML = "Recieved data in " + duration.toString() + " milliseconds"
 }
   
-refreshall()
+
 </script>
 
 <h2>Wasim Autoencoder Status</h2>
@@ -72,8 +72,10 @@ refreshall()
 <p id="status_encode_all"></p> 
 <p id="status_left_to_encode"></p>
 <p id="waiting"></p>
+
 <noscript>Turn on Javascript you bricker</noscript>
 
-  
+<script>refreshall()</script>
+
 </body>
 </html>
