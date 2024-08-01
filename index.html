@@ -1,11 +1,67 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script>
-      
-      var input = document.createElement("p");
-    </script>
-  </head>
-  <body>
-    
-  </body>
+<body>
+
+<script>
+var total_enc = 0;
+var enc_one = 0;
+var enc_two = 0;
+var requestsCompleted = 0;
+
+function refreshone(callback) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    const responseText = this.responseText;
+    const modifiedText = "Wasim Encoder is at index: " + responseText;
+    enc_one = Number(responseText);
+    document.getElementById("status_encode_1").innerHTML = modifiedText;
+
+    requestsCompleted++;
+    if (requestsCompleted === 2) {
+      callback();
+    }
+  }
+  xhttp.open("GET", "https://raw.githubusercontent.com/wasim-uploader/index/main/index.html", true);
+  xhttp.send();
+}
+
+function refreshtwo(callback) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    const responseText = this.responseText;
+    const modifiedText = "Wasim Encoder two is at index: " + responseText;
+    enc_two = 54982 - Number(responseText);
+    document.getElementById("status_encode_2").innerHTML = modifiedText;
+
+    requestsCompleted++;
+    if (requestsCompleted === 2) {
+      callback();
+    }
+  }
+  xhttp.open("GET", "https://raw.githubusercontent.com/wasim-uploader/index/main/1.html", true);
+  xhttp.send();
+}
+
+function updateTotal() {
+  total_enc = enc_one + enc_two;
+  const message = "Total parsed: " + total_enc.toString();
+  document.getElementById("status_encode_all").innerHTML = message;
+}
+
+function refreshall() {
+  requestsCompleted = 0;  // Reset the counter
+  refreshone(updateTotal);
+  refreshtwo(updateTotal);
+}
+refreshall()
+</script>
+
+<h2>Wasim Autoencoder Status</h2>
+<button type="button" onclick="refreshall()">Refresh data</button>
+
+<p id="status_encode_1"></p>
+<p id="status_encode_2"></p>
+<p id="status_encode_all"></p>
+
+</body>
 </html>
