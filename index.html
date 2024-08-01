@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<noscript>Turn on javascript you bricker</noscript>
+  
 <script>
+document.getElementById("noscript").innerHTML = "";
 var total_enc = 0;
 var enc_one = 0;
 var enc_two = 0;
@@ -62,11 +62,11 @@ refreshall()
 
 <h2>Wasim Autoencoder Status</h2>
 <button type="button" onclick="refreshall()">Refresh data</button>
-
 <p id="status_encode_1"></p>
 <p id="status_encode_2"></p>
 <p id="status_encode_all"></p> 
 <p id="status_left_to_encode"></p>
+<p id="noscript">Turn on Javascript you bricker</p>
 
   
 </body>
