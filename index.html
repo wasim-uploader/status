@@ -2,6 +2,7 @@
 <html>
 <body>
 
+<noscript>Turn on javascript you bricker</noscript>
 <script>
 var total_enc = 0;
 var enc_one = 0;
@@ -46,9 +47,9 @@ function updateTotal() {
   total_enc = enc_one + enc_two;
   left_num = 54982 - total_enc
   const message = "Total parsed and encoded: " + total_enc.toString();
-  const message = "Left to encode: " + left_num.toString() + " movies";
+  const message2 = "Left to encode: " + left_num.toString() + " movies";
   document.getElementById("status_encode_all").innerHTML = message;
-  document.getElementById("status_left_to_encode").innerHTML = message;
+  document.getElementById("status_left_to_encode").innerHTML = message2;
 }
 
 function refreshall() {
@@ -66,7 +67,6 @@ refreshall()
 <p id="status_encode_2"></p>
 <p id="status_encode_all"></p> 
 <p id="status_left_to_encode"></p>
-<noscript>Turn on javascript you bricker</noscript>
 
   
 </body>
