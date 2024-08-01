@@ -52,9 +52,11 @@ function updateTotal() {
 }
 
 function refreshall() {
+  document.getElementById("waiting").innerHTML = "Waiting for data...";
   requestsCompleted = 0;  // Reset the counter
   refreshone(updateTotal);
   refreshtwo(updateTotal);
+  document.getElementById("waiting").innerHTML = ""
 }
   
 refreshall()
@@ -66,6 +68,7 @@ refreshall()
 <p id="status_encode_2"></p>
 <p id="status_encode_all"></p> 
 <p id="status_left_to_encode"></p>
+<p id="waiting"></p>
 <noscript>Turn on Javascript you bricker</noscript>
 
   
