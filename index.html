@@ -52,11 +52,14 @@ function updateTotal() {
 }
 
 function refreshall() {
+  const startTime = Date.now();
   document.getElementById("waiting").innerHTML = "Waiting for data...";
   requestsCompleted = 0;  // Reset the counter
   refreshone(updateTotal);
   refreshtwo(updateTotal);
-  document.getElementById("waiting").innerHTML = ""
+  const endTime = Date.now();
+  const duration = endTime - startTime; 
+  document.getElementById("waiting").innerHTML = "Recieved data in " + duration.toString() + " milliseconds"
 }
   
 refreshall()
