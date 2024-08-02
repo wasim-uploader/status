@@ -59,8 +59,8 @@ function refreshall() {
   refreshone(updateTotal);
   refreshtwo(updateTotal);
   const endTime = performance.now();
-  const durationInMicroseconds = (endTime - startTime) * 1000;
-  document.getElementById("waiting").innerHTML = "Recieved data in ${durationInMicroseconds} microseconds"
+  const durationInMilliseconds = (endTime - startTime);
+  document.getElementById("waiting").innerHTML = "Recieved data in ${durationInMilliseconds} milliseconds"
 }
   
 
