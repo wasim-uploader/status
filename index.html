@@ -59,7 +59,7 @@ function refreshall() {
   refreshone(updateTotal);
   refreshtwo(updateTotal);
   const endTime = performance.now();
-  const durationInMicroseconds = BigInt(Math.round((endTime - startTime) * 1000000));
+  const durationInMicroseconds = (endTime - startTime) * 1000;
   document.getElementById("waiting").innerHTML = "Recieved data in ${durationInMicroseconds} microseconds"
 }
   
